@@ -17,21 +17,21 @@ class Home extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        "Google",
+                        "Accenture",
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
                           decoration: TextDecoration.none,
                           fontFamily: 'Righteous',
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.italic,
-                          fontSize: 40.0,
+                          fontSize: 30.0,
                           color: Colors.white,
                         ),
                       ),
                     ),
                     Expanded(
                       child: Text(
-                        "Silicon Valley, USA",
+                        "Pierre Nanterme",
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
                           decoration: TextDecoration.none,
@@ -45,26 +45,25 @@ class Home extends StatelessWidget {
                     )
                   ],
                 ),
-
                 Row(
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        "Google",
+                        "Birla Group",
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
                           decoration: TextDecoration.none,
                           fontFamily: 'Righteous',
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.italic,
-                          fontSize: 40.0,
+                          fontSize: 30.0,
                           color: Colors.white,
                         ),
                       ),
                     ),
                     Expanded(
                       child: Text(
-                        "Silicon Valley, USA",
+                        "Kumar Birla",
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
                           decoration: TextDecoration.none,
@@ -78,26 +77,25 @@ class Home extends StatelessWidget {
                     )
                   ],
                 ),
-
                 Row(
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        "Google",
+                        "Adobe",
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
                           decoration: TextDecoration.none,
                           fontFamily: 'Righteous',
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.italic,
-                          fontSize: 40.0,
+                          fontSize: 30.0,
                           color: Colors.white,
                         ),
                       ),
                     ),
                     Expanded(
                       child: Text(
-                        "Silicon Valley, USA",
+                        "Shantanu Narayen",
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
                           decoration: TextDecoration.none,
@@ -111,26 +109,25 @@ class Home extends StatelessWidget {
                     )
                   ],
                 ),
-
                 Row(
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        "Google",
+                        "Agenus",
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
                           decoration: TextDecoration.none,
                           fontFamily: 'Righteous',
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.italic,
-                          fontSize: 40.0,
+                          fontSize: 30.0,
                           color: Colors.white,
                         ),
                       ),
                     ),
                     Expanded(
                       child: Text(
-                        "Silicon Valley, USA",
+                        "Garo H. Armen",
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
                           decoration: TextDecoration.none,
@@ -143,8 +140,55 @@ class Home extends StatelessWidget {
                       ),
                     )
                   ],
-                )
+                ),
+                CompanyNameAsset(),
+                CompanyButton()
               ],
             )));
+  }
+}
+
+class CompanyNameAsset extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage = AssetImage('images/company.png');
+    Image image = Image(image: assetImage, width: 150.0, height: 150.0);
+    return Container(child: image);
+  }
+}
+
+class CompanyButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 30.0),
+      width: 250.0,
+      height: 50.0,
+      child: RaisedButton(
+          color: Colors.deepOrange,
+          child: Text(
+            "Check your Company",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20.0,
+            ),
+          ),
+          elevation: 6.0,
+          onPressed: () {
+            companyPop(context);
+          }),
+    );
+  }
+
+  void companyPop(BuildContext context) {
+    var alertDialog = AlertDialog(
+      title: Text("Button pressed successfully!"),
+      content: Text("Click again if you wish to...!"),
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alertDialog;
+        });
   }
 }
